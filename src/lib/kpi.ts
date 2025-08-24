@@ -182,7 +182,9 @@ export function formatKpiValueCached(value: number, type: 'currency' | 'number' 
   // Limit cache size
   if (formatCache.size > 1000) {
     const firstKey = formatCache.keys().next().value
-    formatCache.delete(firstKey)
+    if (typeof firstKey === 'string') {
+      formatCache.delete(firstKey)
+    }
   }
   
   formatCache.set(cacheKey, formatted)

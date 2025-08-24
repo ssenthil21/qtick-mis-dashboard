@@ -32,7 +32,7 @@ export function useChartTheme() {
       
       animationFrameRef.current = requestAnimationFrame(() => {
         setTimeout(() => {
-          if (chart && !chart.destroyed) {
+          if (chart) {
             chart.destroy()
           }
           chartRef.current = null
@@ -56,14 +56,14 @@ export function useChartTheme() {
 
   const registerChart = useCallback((chart: Chart) => {
     // Clean up previous chart if it exists
-    if (chartRef.current && !chartRef.current.destroyed) {
+    if (chartRef.current) {
       chartRef.current.destroy()
     }
     chartRef.current = chart
   }, [])
 
   const destroyChart = useCallback(() => {
-    if (chartRef.current && !chartRef.current.destroyed) {
+    if (chartRef.current) {
       chartRef.current.destroy()
       chartRef.current = null
     }
@@ -71,10 +71,10 @@ export function useChartTheme() {
 
   // Optimized chart update function
   const updateChartData = useCallback((newData: any) => {
-    if (chartRef.current && !chartRef.current.destroyed) {
+    if (chartRef.current) {
       // Use requestAnimationFrame for smooth updates
       requestAnimationFrame(() => {
-        if (chartRef.current && !chartRef.current.destroyed) {
+        if (chartRef.current) {
           chartRef.current.data = newData
           chartRef.current.update('none') // Skip animations for better performance
         }
