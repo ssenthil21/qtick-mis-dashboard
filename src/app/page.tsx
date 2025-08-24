@@ -73,24 +73,26 @@ export default function Home() {
   const filteredKPIs = useFilteredKPIs(sampleClients, filters)
 
   // Apply sorting to filtered clients when a sort key is set
-  const sortedClients = sortConfig.key
-    ? [...filteredClients].sort((a, b) => {
-        const aValue = a[sortConfig.key]
-        const bValue = b[sortConfig.key]
+  let sortedClients = filteredClients
+  if (sortConfig.key) {
+    const key = sortConfig.key
+    sortedClients = [...filteredClients].sort((a, b) => {
+      const aValue = a[key]
+      const bValue = b[key]
 
-        if (typeof aValue === 'string' && typeof bValue === 'string') {
-          const comparison = aValue.localeCompare(bValue)
-          return sortConfig.direction === 'asc' ? comparison : -comparison
-        }
+      if (typeof aValue === 'string' && typeof bValue === 'string') {
+        const comparison = aValue.localeCompare(bValue)
+        return sortConfig.direction === 'asc' ? comparison : -comparison
+      }
 
-        if (typeof aValue === 'number' && typeof bValue === 'number') {
-          const comparison = aValue - bValue
-          return sortConfig.direction === 'asc' ? comparison : -comparison
-        }
+      if (typeof aValue === 'number' && typeof bValue === 'number') {
+        const comparison = aValue - bValue
+        return sortConfig.direction === 'asc' ? comparison : -comparison
+      }
 
-        return 0
-      })
-    : filteredClients
+      return 0
+    })
+  }
 
   if (!mounted) {
     return null
