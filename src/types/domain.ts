@@ -6,6 +6,9 @@ export interface Client {
   industry: string;
   status: 'Paid' | 'Trial' | 'Free Tier';
   monthlyJobs: number;
+  walkIns: number;
+  appointments: number;
+  totalReviews: number;
   totalRevenue: number;
   healthScore: number;
   joinDate: string;
@@ -16,8 +19,9 @@ export interface Client {
   notes?: string;
   contactEmail?: string;
   phoneNumber?: string;
-  newCustomer: boolean;
-  repeatCustomer: boolean;
+  accountManager: string;
+  newCustomers: number;
+  repeatCustomers: number;
   averageReview: number;
 }
 
