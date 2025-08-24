@@ -23,6 +23,8 @@ interface RenewalFormData {
   notes?: string
 }
 
+type RenewalFormErrors = Partial<Record<keyof RenewalFormData, string>>
+
 const plans = [
   {
     id: 'basic',
@@ -63,10 +65,10 @@ export function RenewalModal({ isOpen, onClose, onSubmit, client, isLoading = fa
     notes: ''
   })
 
-  const [errors, setErrors] = useState<Partial<RenewalFormData>>({})
+  const [errors, setErrors] = useState<RenewalFormErrors>({})
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<RenewalFormData> = {}
+    const newErrors: RenewalFormErrors = {}
 
     if (!formData.renewalDate) {
       newErrors.renewalDate = 'Renewal date is required'
