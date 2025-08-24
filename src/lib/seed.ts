@@ -1,4 +1,15 @@
-import { Client, User, IndustryAverage, FeatureUsage, StaffStat, Activity, Report, Notification, Campaign } from '@/types/domain';
+import {
+  Client,
+  User,
+  IndustryAverage,
+  FeatureUsage,
+  StaffStat,
+  Activity,
+  Report,
+  Notification,
+  Campaign,
+  Lead,
+} from '@/types/domain';
 
 // Sample feature usage data
 const sampleFeatures: FeatureUsage[] = [
@@ -634,6 +645,107 @@ export const sampleCampaigns: Campaign[] = [
     clickRate: 35,
     createdAt: '2025-07-20T00:00:00Z'
   }
+];
+
+export const sampleLeads: Lead[] = [
+  {
+    id: 'lead-001',
+    businessName: "Oceanic Spa",
+    leadSource: 'Website',
+    estimatedDealSize: 4800,
+    lastContactDate: '2025-08-20T00:00:00Z',
+    assignedTo: 'Alice Johnson',
+    stage: 'new_lead',
+    contactPerson: 'Maria Lopez',
+    email: 'maria@oceanicspa.com',
+    phone: '+1-555-1010',
+    activity: [
+      { date: '2025-08-20T00:00:00Z', note: 'Inquiry via website form', type: 'note' },
+    ],
+  },
+  {
+    id: 'lead-002',
+    businessName: 'Glow Beauty',
+    leadSource: 'Referral',
+    estimatedDealSize: 6500,
+    lastContactDate: '2025-08-18T00:00:00Z',
+    assignedTo: 'Bob Smith',
+    stage: 'contacted',
+    contactPerson: 'Jane Doe',
+    email: 'jane@glowbeauty.com',
+    phone: '+1-555-2020',
+    activity: [
+      { date: '2025-08-17T00:00:00Z', note: 'Referral from existing client', type: 'note' },
+      { date: '2025-08-18T00:00:00Z', note: 'Initial call completed', type: 'call' },
+    ],
+  },
+  {
+    id: 'lead-003',
+    businessName: 'Urban Cuts',
+    leadSource: 'Cold Call',
+    estimatedDealSize: 3000,
+    lastContactDate: '2025-08-15T00:00:00Z',
+    assignedTo: 'Carol Lee',
+    stage: 'demo_scheduled',
+    contactPerson: 'Tom Harris',
+    email: 'tom@urbancuts.com',
+    phone: '+1-555-3030',
+    expectedCloseDate: '2025-09-01T00:00:00Z',
+    activity: [
+      { date: '2025-08-14T00:00:00Z', note: 'Cold call made', type: 'call' },
+      { date: '2025-08-15T00:00:00Z', note: 'Demo scheduled for 08/25', type: 'meeting' },
+    ],
+  },
+  {
+    id: 'lead-004',
+    businessName: 'Zenith Wellness',
+    leadSource: 'Website',
+    estimatedDealSize: 5200,
+    lastContactDate: '2025-08-10T00:00:00Z',
+    assignedTo: 'Alice Johnson',
+    stage: 'trial_started',
+    contactPerson: 'Liam Brown',
+    email: 'liam@zenithwellness.com',
+    phone: '+1-555-4040',
+    expectedCloseDate: '2025-09-15T00:00:00Z',
+    activity: [
+      { date: '2025-08-09T00:00:00Z', note: 'Demo completed', type: 'meeting' },
+      { date: '2025-08-10T00:00:00Z', note: 'Trial started', type: 'note' },
+    ],
+  },
+  {
+    id: 'lead-005',
+    businessName: 'Elite Barbers',
+    leadSource: 'Referral',
+    estimatedDealSize: 7200,
+    lastContactDate: '2025-08-12T00:00:00Z',
+    assignedTo: 'Bob Smith',
+    stage: 'converted',
+    contactPerson: 'Ethan Hunt',
+    email: 'ethan@elitebarbers.com',
+    phone: '+1-555-5050',
+    expectedCloseDate: '2025-08-20T00:00:00Z',
+    activity: [
+      { date: '2025-08-05T00:00:00Z', note: 'Demo completed', type: 'meeting' },
+      { date: '2025-08-12T00:00:00Z', note: 'Converted to paying customer', type: 'note' },
+    ],
+  },
+  {
+    id: 'lead-006',
+    businessName: 'Salon Luxe',
+    leadSource: 'Cold Call',
+    estimatedDealSize: 4000,
+    lastContactDate: '2025-08-05T00:00:00Z',
+    assignedTo: 'Carol Lee',
+    stage: 'lost',
+    contactPerson: 'Olivia Perez',
+    email: 'olivia@salonluxe.com',
+    phone: '+1-555-6060',
+    activity: [
+      { date: '2025-08-04T00:00:00Z', note: 'Initial call made', type: 'call' },
+      { date: '2025-08-05T00:00:00Z', note: 'Lead declined proposal', type: 'note' },
+    ],
+  },
 ];
 
 // Utility functions for data manipulation

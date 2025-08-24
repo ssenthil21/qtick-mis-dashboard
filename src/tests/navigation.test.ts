@@ -26,6 +26,7 @@ const routes = [
   { path: '/analytics', name: 'Analytics', title: 'Analytics' },
   { path: '/ga4-analytics', name: 'GA4 Analytics', title: 'GA4 Analytics' },
   { path: '/crm', name: 'CRM', title: 'CRM' },
+  { path: '/sales-pipeline', name: 'Sales Pipeline', title: 'Sales Pipeline' },
   { path: '/live-ops', name: 'Live Ops', title: 'Live Ops' },
   { path: '/reports', name: 'Reports', title: 'Reports' },
   { path: '/admin', name: 'Admin', title: 'Admin' },
@@ -46,8 +47,9 @@ describe('Navigation and Routing Tests', () => {
       const expectedRoutes = [
         '/',
         '/analytics',
-        '/ga4-analytics', 
+        '/ga4-analytics',
         '/crm',
+        '/sales-pipeline',
         '/live-ops',
         '/reports',
         '/admin'
@@ -99,6 +101,7 @@ describe('Navigation and Routing Tests', () => {
         { name: 'Analytics', href: '/analytics', description: 'Revenue and performance analytics' },
         { name: 'GA4 Analytics', href: '/ga4-analytics', description: 'Google Analytics insights' },
         { name: 'CRM', href: '/crm', description: 'Customer relationship management', badge: '3' },
+        { name: 'Sales Pipeline', href: '/sales-pipeline', description: 'Track leads through funnel' },
         { name: 'Live Ops', href: '/live-ops', description: 'Real-time operations monitoring' },
         { name: 'Reports', href: '/reports', description: 'Generate and view reports' },
         { name: 'Admin', href: '/admin', description: 'User and system administration', badge: 'New' },

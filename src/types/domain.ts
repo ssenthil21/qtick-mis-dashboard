@@ -148,3 +148,28 @@ export interface Campaign {
   clickRate: number;
   createdAt: string;
 }
+
+export type LeadStage =
+  | 'new_lead'
+  | 'contacted'
+  | 'demo_scheduled'
+  | 'trial_started'
+  | 'converted'
+  | 'lost';
+
+export interface Lead {
+  id: string;
+  businessName: string;
+  leadSource: 'Website' | 'Referral' | 'Cold Call' | 'Other';
+  estimatedDealSize: number;
+  lastContactDate: string;
+  assignedTo: string;
+  stage: LeadStage;
+  contactPerson?: string;
+  email?: string;
+  phone?: string;
+  expectedCloseDate?: string;
+  activity: { date: string; note: string; type: string }[];
+  nextStep?: string;
+  nextStepDue?: string;
+}
