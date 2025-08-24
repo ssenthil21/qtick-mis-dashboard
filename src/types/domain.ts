@@ -73,7 +73,7 @@ export interface FilterState {
 }
 
 export interface SortConfig {
-  key: keyof Client | 'healthScore';
+  key: keyof Client | 'healthScore' | null;
   direction: 'asc' | 'desc';
 }
 
