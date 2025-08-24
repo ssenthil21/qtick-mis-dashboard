@@ -18,36 +18,36 @@ const sampleFeatures: FeatureUsage[] = [
     usageCount: 245,
     lastUsed: '2025-08-23T08:30:00Z',
     adoptionRate: 95,
-    category: 'Core'
+    category: 'Core',
   },
   {
     featureName: 'Customer Reviews',
     usageCount: 189,
     lastUsed: '2025-08-22T16:45:00Z',
     adoptionRate: 78,
-    category: 'Core'
+    category: 'Core',
   },
   {
     featureName: 'Analytics Dashboard',
     usageCount: 156,
     lastUsed: '2025-08-23T09:15:00Z',
     adoptionRate: 65,
-    category: 'Advanced'
+    category: 'Advanced',
   },
   {
     featureName: 'AI Recommendations',
     usageCount: 89,
     lastUsed: '2025-08-21T14:20:00Z',
     adoptionRate: 42,
-    category: 'Premium'
+    category: 'Premium',
   },
   {
     featureName: 'Mobile App',
     usageCount: 312,
     lastUsed: '2025-08-23T10:00:00Z',
     adoptionRate: 88,
-    category: 'Core'
-  }
+    category: 'Core',
+  },
 ];
 
 // Sample staff statistics
@@ -59,7 +59,7 @@ const sampleStaff: StaffStat[] = [
     jobsCompleted: 45,
     efficiency: 92,
     customerRating: 4.8,
-    activeHours: 160
+    activeHours: 160,
   },
   {
     staffId: 'staff-002',
@@ -68,7 +68,7 @@ const sampleStaff: StaffStat[] = [
     jobsCompleted: 38,
     efficiency: 87,
     customerRating: 4.6,
-    activeHours: 155
+    activeHours: 155,
   },
   {
     staffId: 'staff-003',
@@ -77,8 +77,8 @@ const sampleStaff: StaffStat[] = [
     jobsCompleted: 52,
     efficiency: 94,
     customerRating: 4.9,
-    activeHours: 165
-  }
+    activeHours: 165,
+  },
 ];
 
 // Sample clients data
@@ -103,9 +103,10 @@ export const sampleClients: Client[] = [
     averageReview: 4.8,
     features: sampleFeatures,
     staff: sampleStaff,
-    notes: 'High-value client with excellent engagement. Considering premium features.',
+    notes:
+      'High-value client with excellent engagement. Considering premium features.',
     contactEmail: 'contact@bellasbeauty.com',
-    phoneNumber: '+1-555-0123'
+    phoneNumber: '+1-555-0123',
   },
   {
     id: 'client-002',
@@ -128,7 +129,7 @@ export const sampleClients: Client[] = [
     features: sampleFeatures.slice(0, 3),
     staff: sampleStaff.slice(0, 2),
     contactEmail: 'info@zenspa.com',
-    phoneNumber: '+1-555-0124'
+    phoneNumber: '+1-555-0124',
   },
   {
     id: 'client-003',
@@ -151,7 +152,7 @@ export const sampleClients: Client[] = [
     features: sampleFeatures.slice(0, 2),
     staff: sampleStaff.slice(0, 1),
     notes: 'Trial client showing good engagement. Follow up on conversion.',
-    contactEmail: 'admin@premierclinic.com'
+    contactEmail: 'admin@premierclinic.com',
   },
   {
     id: 'client-004',
@@ -174,7 +175,7 @@ export const sampleClients: Client[] = [
     features: sampleFeatures,
     staff: sampleStaff,
     contactEmail: 'operations@eliteturf.com',
-    phoneNumber: '+1-555-0125'
+    phoneNumber: '+1-555-0125',
   },
   {
     id: 'client-005',
@@ -197,7 +198,7 @@ export const sampleClients: Client[] = [
     features: sampleFeatures.slice(0, 1),
     staff: [],
     notes: 'New free tier user. Low engagement, needs onboarding support.',
-    contactEmail: 'info@quickclean.com'
+    contactEmail: 'info@quickclean.com',
   },
   {
     id: 'client-006',
@@ -220,7 +221,7 @@ export const sampleClients: Client[] = [
     features: sampleFeatures.slice(0, 4),
     staff: sampleStaff,
     contactEmail: 'orders@gourmetfoodtruck.com',
-    phoneNumber: '+1-555-0126'
+    phoneNumber: '+1-555-0126',
   },
   {
     id: 'client-007',
@@ -243,7 +244,7 @@ export const sampleClients: Client[] = [
     features: sampleFeatures.slice(0, 3),
     staff: sampleStaff.slice(0, 2),
     notes: 'Luxury spa with potential for premium features.',
-    contactEmail: 'info@luxuryspa.com'
+    contactEmail: 'info@luxuryspa.com',
   },
   {
     id: 'client-008',
@@ -266,7 +267,7 @@ export const sampleClients: Client[] = [
     features: sampleFeatures,
     staff: sampleStaff,
     contactEmail: 'booking@downtownhair.com',
-    phoneNumber: '+1-555-0127'
+    phoneNumber: '+1-555-0127',
   },
   {
     id: 'client-009',
@@ -289,7 +290,7 @@ export const sampleClients: Client[] = [
     features: sampleFeatures.slice(0, 4),
     staff: sampleStaff.slice(0, 2),
     contactEmail: 'admin@familymedical.com',
-    phoneNumber: '+1-555-0128'
+    phoneNumber: '+1-555-0128',
   },
   {
     id: 'client-010',
@@ -312,7 +313,7 @@ export const sampleClients: Client[] = [
     features: sampleFeatures.slice(0, 2),
     staff: sampleStaff.slice(0, 1),
     notes: 'Small turf club, considering upgrade to paid plan.',
-    contactEmail: 'info@greenvalleyturf.com'
+    contactEmail: 'info@greenvalleyturf.com',
   },
   {
     id: 'client-011',
@@ -335,7 +336,7 @@ export const sampleClients: Client[] = [
     features: sampleFeatures.slice(0, 3),
     staff: sampleStaff.slice(0, 2),
     contactEmail: 'service@expresswash.com',
-    phoneNumber: '+1-555-0129'
+    phoneNumber: '+1-555-0129',
   },
   {
     id: 'client-012',
@@ -358,8 +359,8 @@ export const sampleClients: Client[] = [
     features: sampleFeatures,
     staff: sampleStaff.slice(0, 2),
     contactEmail: 'orders@streeteats.com',
-    phoneNumber: '+1-555-0130'
-  }
+    phoneNumber: '+1-555-0130',
+  },
 ];
 
 // Sample users data
@@ -373,7 +374,7 @@ export const sampleUsers: User[] = [
     lastLogin: '2025-08-23T09:00:00Z',
     createdAt: '2024-01-15T00:00:00Z',
     permissions: ['read', 'write', 'delete', 'admin'],
-    avatar: '/avatars/alice.jpg'
+    avatar: '/avatars/alice.jpg',
   },
   {
     id: 'user-002',
@@ -384,7 +385,7 @@ export const sampleUsers: User[] = [
     lastLogin: '2025-08-23T08:30:00Z',
     createdAt: '2024-02-20T00:00:00Z',
     permissions: ['read', 'write'],
-    avatar: '/avatars/bob.jpg'
+    avatar: '/avatars/bob.jpg',
   },
   {
     id: 'user-003',
@@ -394,7 +395,7 @@ export const sampleUsers: User[] = [
     status: 'Active',
     lastLogin: '2025-08-22T16:45:00Z',
     createdAt: '2024-03-10T00:00:00Z',
-    permissions: ['read', 'write']
+    permissions: ['read', 'write'],
   },
   {
     id: 'user-004',
@@ -404,7 +405,7 @@ export const sampleUsers: User[] = [
     status: 'Inactive',
     lastLogin: '2025-08-15T14:20:00Z',
     createdAt: '2024-05-05T00:00:00Z',
-    permissions: ['read']
+    permissions: ['read'],
   },
   {
     id: 'user-005',
@@ -415,8 +416,8 @@ export const sampleUsers: User[] = [
     lastLogin: '2025-08-23T07:15:00Z',
     createdAt: '2024-06-18T00:00:00Z',
     permissions: ['read', 'write'],
-    avatar: '/avatars/emma.jpg'
-  }
+    avatar: '/avatars/emma.jpg',
+  },
 ];
 
 // Industry averages data
@@ -427,7 +428,7 @@ export const industryAverages: IndustryAverage[] = [
     averageReviews: 4.2,
     averageJobGrowth: 15,
     averageHealthScore: 78,
-    averageRevenue: 11200
+    averageRevenue: 11200,
   },
   {
     industry: 'Healthcare',
@@ -435,7 +436,7 @@ export const industryAverages: IndustryAverage[] = [
     averageReviews: 4.6,
     averageJobGrowth: 8,
     averageHealthScore: 82,
-    averageRevenue: 9800
+    averageRevenue: 9800,
   },
   {
     industry: 'Finance',
@@ -443,7 +444,7 @@ export const industryAverages: IndustryAverage[] = [
     averageReviews: 4.1,
     averageJobGrowth: 12,
     averageHealthScore: 75,
-    averageRevenue: 13500
+    averageRevenue: 13500,
   },
   {
     industry: 'Retail',
@@ -451,7 +452,7 @@ export const industryAverages: IndustryAverage[] = [
     averageReviews: 3.9,
     averageJobGrowth: 22,
     averageHealthScore: 68,
-    averageRevenue: 8900
+    averageRevenue: 8900,
   },
   {
     industry: 'Manufacturing',
@@ -459,7 +460,7 @@ export const industryAverages: IndustryAverage[] = [
     averageReviews: 4.3,
     averageJobGrowth: 18,
     averageHealthScore: 81,
-    averageRevenue: 16700
+    averageRevenue: 16700,
   },
   {
     industry: 'Construction',
@@ -467,7 +468,7 @@ export const industryAverages: IndustryAverage[] = [
     averageReviews: 3.8,
     averageJobGrowth: 25,
     averageHealthScore: 65,
-    averageRevenue: 7200
+    averageRevenue: 7200,
   },
   {
     industry: 'Education',
@@ -475,7 +476,7 @@ export const industryAverages: IndustryAverage[] = [
     averageReviews: 4.4,
     averageJobGrowth: 5,
     averageHealthScore: 79,
-    averageRevenue: 6500
+    averageRevenue: 6500,
   },
   {
     industry: 'Energy',
@@ -483,8 +484,8 @@ export const industryAverages: IndustryAverage[] = [
     averageReviews: 4.0,
     averageJobGrowth: 14,
     averageHealthScore: 73,
-    averageRevenue: 12800
-  }
+    averageRevenue: 12800,
+  },
 ];
 
 // Sample activity feed data
@@ -495,7 +496,7 @@ export const sampleActivities: Activity[] = [
     message: 'New client "TechStart Inc" signed up for trial',
     timestamp: '2025-08-23T10:30:00Z',
     clientId: 'client-new-001',
-    clientName: 'TechStart Inc'
+    clientName: 'TechStart Inc',
   },
   {
     id: 'activity-002',
@@ -504,7 +505,7 @@ export const sampleActivities: Activity[] = [
     timestamp: '2025-08-23T09:45:00Z',
     clientId: 'client-008',
     clientName: 'Manufacturing Corp',
-    metadata: { amount: 2480 }
+    metadata: { amount: 2480 },
   },
   {
     id: 'activity-003',
@@ -513,7 +514,7 @@ export const sampleActivities: Activity[] = [
     timestamp: '2025-08-23T09:15:00Z',
     clientId: 'client-001',
     clientName: 'TechCorp Solutions',
-    metadata: { feature: 'AI Recommendations' }
+    metadata: { feature: 'AI Recommendations' },
   },
   {
     id: 'activity-004',
@@ -521,7 +522,7 @@ export const sampleActivities: Activity[] = [
     message: 'Support ticket created by Healthcare Plus',
     timestamp: '2025-08-23T08:30:00Z',
     clientId: 'client-003',
-    clientName: 'Healthcare Plus'
+    clientName: 'Healthcare Plus',
   },
   {
     id: 'activity-005',
@@ -529,8 +530,8 @@ export const sampleActivities: Activity[] = [
     message: 'Financial Services Inc renewed subscription',
     timestamp: '2025-08-23T07:20:00Z',
     clientId: 'client-006',
-    clientName: 'Financial Services Inc'
-  }
+    clientName: 'Financial Services Inc',
+  },
 ];
 
 // Sample reports data
@@ -542,7 +543,7 @@ export const sampleReports: Report[] = [
     createdAt: '2025-08-01T09:00:00Z',
     createdBy: 'Alice Johnson',
     status: 'Generated',
-    downloadUrl: '/reports/revenue-july-2025.pdf'
+    downloadUrl: '/reports/revenue-july-2025.pdf',
   },
   {
     id: 'report-002',
@@ -551,7 +552,7 @@ export const sampleReports: Report[] = [
     createdAt: '2025-07-15T14:30:00Z',
     createdBy: 'Bob Smith',
     status: 'Generated',
-    downloadUrl: '/reports/client-health-q2-2025.pdf'
+    downloadUrl: '/reports/client-health-q2-2025.pdf',
   },
   {
     id: 'report-003',
@@ -559,7 +560,7 @@ export const sampleReports: Report[] = [
     type: 'Feature Usage',
     createdAt: '2025-08-20T11:15:00Z',
     createdBy: 'Carol Davis',
-    status: 'Processing'
+    status: 'Processing',
   },
   {
     id: 'report-004',
@@ -568,8 +569,8 @@ export const sampleReports: Report[] = [
     createdAt: '2025-08-10T16:45:00Z',
     createdBy: 'Emma Brown',
     status: 'Generated',
-    downloadUrl: '/reports/staff-performance-july-2025.pdf'
-  }
+    downloadUrl: '/reports/staff-performance-july-2025.pdf',
+  },
 ];
 
 // Sample notifications data
@@ -581,7 +582,7 @@ export const sampleNotifications: Notification[] = [
     type: 'success',
     timestamp: '2025-08-23T10:30:00Z',
     read: false,
-    actionUrl: '/dashboard?client=client-new-001'
+    actionUrl: '/dashboard?client=client-new-001',
   },
   {
     id: 'notif-002',
@@ -589,7 +590,7 @@ export const sampleNotifications: Notification[] = [
     message: 'Manufacturing Corp payment of $2,480 processed successfully',
     type: 'success',
     timestamp: '2025-08-23T09:45:00Z',
-    read: false
+    read: false,
   },
   {
     id: 'notif-003',
@@ -598,7 +599,7 @@ export const sampleNotifications: Notification[] = [
     type: 'warning',
     timestamp: '2025-08-23T08:15:00Z',
     read: true,
-    actionUrl: '/dashboard?client=client-005'
+    actionUrl: '/dashboard?client=client-005',
   },
   {
     id: 'notif-004',
@@ -606,8 +607,8 @@ export const sampleNotifications: Notification[] = [
     message: 'Scheduled maintenance tonight from 2-4 AM EST',
     type: 'info',
     timestamp: '2025-08-22T16:00:00Z',
-    read: true
-  }
+    read: true,
+  },
 ];
 
 // Sample campaigns data
@@ -621,7 +622,7 @@ export const sampleCampaigns: Campaign[] = [
     sentCount: 156,
     openRate: 68,
     clickRate: 24,
-    createdAt: '2025-08-01T00:00:00Z'
+    createdAt: '2025-08-01T00:00:00Z',
   },
   {
     id: 'campaign-002',
@@ -632,7 +633,7 @@ export const sampleCampaigns: Campaign[] = [
     sentCount: 89,
     openRate: 45,
     clickRate: 12,
-    createdAt: '2025-08-15T00:00:00Z'
+    createdAt: '2025-08-15T00:00:00Z',
   },
   {
     id: 'campaign-003',
@@ -643,14 +644,14 @@ export const sampleCampaigns: Campaign[] = [
     sentCount: 234,
     openRate: 82,
     clickRate: 35,
-    createdAt: '2025-07-20T00:00:00Z'
-  }
+    createdAt: '2025-07-20T00:00:00Z',
+  },
 ];
 
 export const sampleLeads: Lead[] = [
   {
     id: 'lead-001',
-    businessName: "Oceanic Spa",
+    businessName: 'Oceanic Spa',
     leadSource: 'Website',
     estimatedDealSize: 4800,
     lastContactDate: '2025-08-20T00:00:00Z',
@@ -660,7 +661,11 @@ export const sampleLeads: Lead[] = [
     email: 'maria@oceanicspa.com',
     phone: '+1-555-1010',
     activity: [
-      { date: '2025-08-20T00:00:00Z', note: 'Inquiry via website form', type: 'note' },
+      {
+        date: '2025-08-20T00:00:00Z',
+        note: 'Inquiry via website form',
+        type: 'note',
+      },
     ],
   },
   {
@@ -675,8 +680,16 @@ export const sampleLeads: Lead[] = [
     email: 'jane@glowbeauty.com',
     phone: '+1-555-2020',
     activity: [
-      { date: '2025-08-17T00:00:00Z', note: 'Referral from existing client', type: 'note' },
-      { date: '2025-08-18T00:00:00Z', note: 'Initial call completed', type: 'call' },
+      {
+        date: '2025-08-17T00:00:00Z',
+        note: 'Referral from existing client',
+        type: 'note',
+      },
+      {
+        date: '2025-08-18T00:00:00Z',
+        note: 'Initial call completed',
+        type: 'call',
+      },
     ],
   },
   {
@@ -693,7 +706,11 @@ export const sampleLeads: Lead[] = [
     expectedCloseDate: '2025-09-01T00:00:00Z',
     activity: [
       { date: '2025-08-14T00:00:00Z', note: 'Cold call made', type: 'call' },
-      { date: '2025-08-15T00:00:00Z', note: 'Demo scheduled for 08/25', type: 'meeting' },
+      {
+        date: '2025-08-15T00:00:00Z',
+        note: 'Demo scheduled for 08/25',
+        type: 'meeting',
+      },
     ],
   },
   {
@@ -727,7 +744,11 @@ export const sampleLeads: Lead[] = [
     expectedCloseDate: '2025-08-20T00:00:00Z',
     activity: [
       { date: '2025-08-05T00:00:00Z', note: 'Demo completed', type: 'meeting' },
-      { date: '2025-08-12T00:00:00Z', note: 'Converted to paying customer', type: 'note' },
+      {
+        date: '2025-08-12T00:00:00Z',
+        note: 'Converted to paying customer',
+        type: 'note',
+      },
     ],
   },
   {
@@ -743,44 +764,179 @@ export const sampleLeads: Lead[] = [
     phone: '+1-555-6060',
     activity: [
       { date: '2025-08-04T00:00:00Z', note: 'Initial call made', type: 'call' },
-      { date: '2025-08-05T00:00:00Z', note: 'Lead declined proposal', type: 'note' },
+      {
+        date: '2025-08-05T00:00:00Z',
+        note: 'Lead declined proposal',
+        type: 'note',
+      },
+    ],
+  },
+  {
+    id: 'lead-007',
+    businessName: 'Pristine Nails',
+    leadSource: 'Other',
+    estimatedDealSize: 2800,
+    lastContactDate: '2025-08-21T00:00:00Z',
+    assignedTo: 'Emma Brown',
+    stage: 'new_lead',
+    contactPerson: 'Nina Patel',
+    email: 'nina@pristinenails.com',
+    phone: '+1-555-7070',
+    activity: [
+      { date: '2025-08-21T00:00:00Z', note: 'Met at trade show', type: 'note' },
+    ],
+  },
+  {
+    id: 'lead-008',
+    businessName: 'Healthy Life Clinic',
+    leadSource: 'Website',
+    estimatedDealSize: 5600,
+    lastContactDate: '2025-08-18T00:00:00Z',
+    assignedTo: 'Bob Smith',
+    stage: 'contacted',
+    contactPerson: 'Dr. Alan Green',
+    email: 'agreen@healthylife.com',
+    phone: '+1-555-8080',
+    activity: [
+      { date: '2025-08-17T00:00:00Z', note: 'Website sign-up', type: 'note' },
+      {
+        date: '2025-08-18T00:00:00Z',
+        note: 'Initial email sent',
+        type: 'email',
+      },
+    ],
+  },
+  {
+    id: 'lead-009',
+    businessName: 'Bistro Cafe',
+    leadSource: 'Referral',
+    estimatedDealSize: 4500,
+    lastContactDate: '2025-08-16T00:00:00Z',
+    assignedTo: 'Carol Lee',
+    stage: 'demo_scheduled',
+    contactPerson: 'George Kim',
+    email: 'george@bistrocafe.com',
+    phone: '+1-555-9090',
+    expectedCloseDate: '2025-09-05T00:00:00Z',
+    activity: [
+      {
+        date: '2025-08-15T00:00:00Z',
+        note: 'Referral from partner',
+        type: 'note',
+      },
+      {
+        date: '2025-08-16T00:00:00Z',
+        note: 'Demo scheduled for 09/01',
+        type: 'meeting',
+      },
+    ],
+  },
+  {
+    id: 'lead-010',
+    businessName: 'Yoga Harmony',
+    leadSource: 'Cold Call',
+    estimatedDealSize: 5000,
+    lastContactDate: '2025-08-11T00:00:00Z',
+    assignedTo: 'Alice Johnson',
+    stage: 'trial_started',
+    contactPerson: 'Sophie Turner',
+    email: 'sophie@yogaharmony.com',
+    phone: '+1-555-0001',
+    expectedCloseDate: '2025-09-20T00:00:00Z',
+    activity: [
+      { date: '2025-08-10T00:00:00Z', note: 'Demo completed', type: 'meeting' },
+      { date: '2025-08-11T00:00:00Z', note: 'Trial started', type: 'note' },
+    ],
+  },
+  {
+    id: 'lead-011',
+    businessName: 'Massage Therapy Co',
+    leadSource: 'Website',
+    estimatedDealSize: 6100,
+    lastContactDate: '2025-08-19T00:00:00Z',
+    assignedTo: 'Bob Smith',
+    stage: 'converted',
+    contactPerson: 'Grace Lee',
+    email: 'grace@massageco.com',
+    phone: '+1-555-1111',
+    expectedCloseDate: '2025-08-22T00:00:00Z',
+    activity: [
+      { date: '2025-08-13T00:00:00Z', note: 'Demo completed', type: 'meeting' },
+      {
+        date: '2025-08-19T00:00:00Z',
+        note: 'Converted to paying customer',
+        type: 'note',
+      },
+    ],
+  },
+  {
+    id: 'lead-012',
+    businessName: 'Clip & Trim',
+    leadSource: 'Other',
+    estimatedDealSize: 2700,
+    lastContactDate: '2025-08-07T00:00:00Z',
+    assignedTo: 'Carol Lee',
+    stage: 'lost',
+    contactPerson: 'Rick Moore',
+    email: 'rick@clipntrim.com',
+    phone: '+1-555-1212',
+    activity: [
+      {
+        date: '2025-08-06T00:00:00Z',
+        note: 'Initial email sent',
+        type: 'email',
+      },
+      {
+        date: '2025-08-07T00:00:00Z',
+        note: 'Decided to postpone',
+        type: 'note',
+      },
     ],
   },
 ];
 
 // Utility functions for data manipulation
 export const getClientById = (id: string): Client | undefined => {
-  return sampleClients.find(client => client.id === id);
+  return sampleClients.find((client) => client.id === id);
 };
 
 export const getClientsByIndustry = (industry: string): Client[] => {
-  return sampleClients.filter(client => client.industry === industry);
+  return sampleClients.filter((client) => client.industry === industry);
 };
 
 export const getClientsByStatus = (status: string): Client[] => {
-  return sampleClients.filter(client => client.status === status);
+  return sampleClients.filter((client) => client.status === status);
 };
 
 export const getUserById = (id: string): User | undefined => {
-  return sampleUsers.find(user => user.id === id);
+  return sampleUsers.find((user) => user.id === id);
 };
 
-export const getIndustryAverage = (industry: string): IndustryAverage | undefined => {
-  return industryAverages.find(avg => avg.industry === industry);
+export const getIndustryAverage = (
+  industry: string
+): IndustryAverage | undefined => {
+  return industryAverages.find((avg) => avg.industry === industry);
 };
 
 // Generate random activity for live feed
 export const generateRandomActivity = (): Activity => {
-  const types: Activity['type'][] = ['client_signup', 'payment_received', 'feature_used', 'support_ticket', 'renewal'];
+  const types: Activity['type'][] = [
+    'client_signup',
+    'payment_received',
+    'feature_used',
+    'support_ticket',
+    'renewal',
+  ];
   const randomType = types[Math.floor(Math.random() * types.length)];
-  const randomClient = sampleClients[Math.floor(Math.random() * sampleClients.length)];
-  
+  const randomClient =
+    sampleClients[Math.floor(Math.random() * sampleClients.length)];
+
   const messages = {
     client_signup: `New client "${randomClient.name}" signed up for trial`,
     payment_received: `Payment received from ${randomClient.name} - $${Math.floor(Math.random() * 5000 + 500)}`,
     feature_used: `${randomClient.name} used ${sampleFeatures[Math.floor(Math.random() * sampleFeatures.length)].featureName} feature`,
     support_ticket: `Support ticket created by ${randomClient.name}`,
-    renewal: `${randomClient.name} renewed subscription`
+    renewal: `${randomClient.name} renewed subscription`,
   };
 
   return {
@@ -789,6 +945,6 @@ export const generateRandomActivity = (): Activity => {
     message: messages[randomType],
     timestamp: new Date().toISOString(),
     clientId: randomClient.id,
-    clientName: randomClient.name
+    clientName: randomClient.name,
   };
 };
