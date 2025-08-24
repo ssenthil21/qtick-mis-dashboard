@@ -6,6 +6,7 @@ import { KpiCard } from '@/components/dashboard/KpiCard'
 import { PieChart, BarChart, RadarChart, ChartErrorBoundary } from '@/components/charts'
 import { sampleClients, industryAverages } from '@/lib/seed'
 import { Client } from '@/types/domain'
+import { ClientComparison } from '@/components/analytics/ClientComparison'
 
 export default function AnalyticsPage() {
   const [mounted, setMounted] = useState(false)
@@ -22,7 +23,6 @@ export default function AnalyticsPage() {
 
   // Calculate revenue metrics
   const totalRevenue = sampleClients.reduce((sum, client) => sum + client.totalRevenue, 0)
-  const totalClients = sampleClients.length
   const paidClients = sampleClients.filter(client => client.status === 'Paid').length
   
   // ARPC (Average Revenue Per Client) - only for paid clients
@@ -431,6 +431,7 @@ export default function AnalyticsPage() {
                 </div>
               </div>
             )}
+            <ClientComparison />
           </div>
         </div>
       </div>

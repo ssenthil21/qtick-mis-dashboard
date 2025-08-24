@@ -181,33 +181,32 @@ export function ClientDeepDive({ client, onClose }: ClientDeepDiveProps) {
                     </svg>
                   }
                 />
-                
                 <KpiCard
-                  title="Customer Type"
-                  value={client.newCustomer ? "New Customer" : "Existing"}
+                  title="New Customers"
+                  value={client.newCustomers}
                   gradient="purple"
-                  change={{ value: client.newCustomer ? 100 : 0, type: client.newCustomer ? 'increase' : 'decrease', period: 'status' }}
-                  tooltip={`${client.name} is ${client.newCustomer ? 'a new customer' : 'an existing customer'}`}
+                  change={{ value: 10, type: 'increase', period: 'vs last month' }}
+                  tooltip={`Number of new customers for ${client.name}`}
                   icon={
                     <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                     </svg>
                   }
                 />
-                
+
                 <KpiCard
-                  title="Repeat Customer"
-                  value={client.repeatCustomer ? "Yes" : "No"}
+                  title="Repeat Customers"
+                  value={client.repeatCustomers}
                   gradient="orange"
-                  change={{ value: client.repeatCustomer ? 15.2 : -5.2, type: client.repeatCustomer ? 'increase' : 'decrease', period: 'loyalty score' }}
-                  tooltip={`${client.name} ${client.repeatCustomer ? 'is a repeat customer with multiple bookings' : 'is not yet a repeat customer'}`}
+                  change={{ value: 5, type: 'increase', period: 'vs last month' }}
+                  tooltip={`Number of repeat customers for ${client.name}`}
                   icon={
                     <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
                   }
                 />
-                
+
                 <KpiCard
                   title="Average Review"
                   value={`${(client.averageReview || 4.0).toFixed(1)}/5`}
@@ -332,9 +331,9 @@ export function ClientDeepDive({ client, onClose }: ClientDeepDiveProps) {
                         datasets: [
                           {
                             data: [
-                              Math.floor(client.monthlyJobs * 0.3), // 30% new
-                              Math.floor(client.monthlyJobs * 0.6), // 60% repeat
-                              Math.floor(client.monthlyJobs * 0.1)  // 10% VIP
+                              client.newCustomers,
+                              client.repeatCustomers,
+                              Math.max(client.monthlyJobs - client.newCustomers - client.repeatCustomers, 0)
                             ]
                           }
                         ]
