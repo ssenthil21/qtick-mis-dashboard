@@ -132,7 +132,9 @@ function applyFilters(clients: Client[], filters: FilterState): Client[] {
   if (filterCache.size >= MAX_CACHE_SIZE) {
     // Remove oldest entry
     const firstKey = filterCache.keys().next().value
-    filterCache.delete(firstKey)
+    if (typeof firstKey === 'string') {
+      filterCache.delete(firstKey)
+    }
   }
   filterCache.set(cacheKey, results)
   

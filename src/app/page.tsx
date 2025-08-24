@@ -72,23 +72,27 @@ export default function Home() {
   const filteredClients = useFilteredClients(sampleClients, filters)
   const filteredKPIs = useFilteredKPIs(sampleClients, filters)
 
-  // Apply sorting to filtered clients
-  const sortedClients = [...filteredClients].sort((a, b) => {
-    const aValue = a[sortConfig.key]
-    const bValue = b[sortConfig.key]
-    
-    if (typeof aValue === 'string' && typeof bValue === 'string') {
-      const comparison = aValue.localeCompare(bValue)
-      return sortConfig.direction === 'asc' ? comparison : -comparison
-    }
-    
-    if (typeof aValue === 'number' && typeof bValue === 'number') {
-      const comparison = aValue - bValue
-      return sortConfig.direction === 'asc' ? comparison : -comparison
-    }
-    
-    return 0
-  })
+  // Apply sorting to filtered clients when a sort key is set
+  let sortedClients = filteredClients
+  if (sortConfig.key) {
+    const key = sortConfig.key
+    sortedClients = [...filteredClients].sort((a, b) => {
+      const aValue = a[key]
+      const bValue = b[key]
+
+      if (typeof aValue === 'string' && typeof bValue === 'string') {
+        const comparison = aValue.localeCompare(bValue)
+        return sortConfig.direction === 'asc' ? comparison : -comparison
+      }
+
+      if (typeof aValue === 'number' && typeof bValue === 'number') {
+        const comparison = aValue - bValue
+        return sortConfig.direction === 'asc' ? comparison : -comparison
+      }
+
+      return 0
+    })
+  }
 
   if (!mounted) {
     return null
