@@ -22,6 +22,8 @@ interface OnboardingFormData {
   notes?: string
 }
 
+type OnboardingFormErrors = Partial<Record<keyof OnboardingFormData, string>>
+
 const industries = [
   'Saloon',
   'Spa', 
@@ -57,10 +59,10 @@ export function OnboardingModal({ isOpen, onClose, onSubmit, isLoading = false }
     notes: ''
   })
 
-  const [errors, setErrors] = useState<Partial<OnboardingFormData>>({})
+  const [errors, setErrors] = useState<OnboardingFormErrors>({})
 
   const validateStep = (step: number): boolean => {
-    const newErrors: Partial<OnboardingFormData> = {}
+    const newErrors: OnboardingFormErrors = {}
 
     if (step === 1) {
       if (!formData.clientName.trim()) {
