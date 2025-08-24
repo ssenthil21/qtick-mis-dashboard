@@ -43,6 +43,18 @@ export default function SalesPipelinePage() {
   const [nextAction, setNextAction] = useState('')
   const [nextDue, setNextDue] = useState('')
 
+  const [showAddLead, setShowAddLead] = useState(false)
+  const [newLeadData, setNewLeadData] = useState({
+    businessName: '',
+    leadSource: 'Website' as Lead['leadSource'],
+    estimatedDealSize: '',
+    lastContactDate: '',
+    assignedTo: '',
+    contactPerson: '',
+    email: '',
+    phone: ''
+  })
+
   useEffect(() => {
     if (selectedLead) {
       setNextAction(selectedLead.nextStep || '')
@@ -85,6 +97,55 @@ export default function SalesPipelinePage() {
     })
   }
 
+  const handleNewLeadChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target
+    setNewLeadData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleCreateLead = () => {
+    if (
+      !newLeadData.businessName.trim() ||
+      !newLeadData.estimatedDealSize ||
+      !newLeadData.assignedTo
+    )
+      return
+
+    const lead: Lead = {
+      id: crypto.randomUUID(),
+      businessName: newLeadData.businessName,
+      leadSource: newLeadData.leadSource,
+      estimatedDealSize: Number(newLeadData.estimatedDealSize),
+      lastContactDate: newLeadData.lastContactDate
+        ? new Date(newLeadData.lastContactDate).toISOString()
+        : new Date().toISOString(),
+      assignedTo: newLeadData.assignedTo,
+      stage: 'new_lead',
+      contactPerson: newLeadData.contactPerson,
+      email: newLeadData.email,
+      phone: newLeadData.phone,
+      activity: []
+    }
+
+    setLeads(prev => ({
+      ...prev,
+      new_lead: [...prev.new_lead, lead]
+    }))
+
+    setNewLeadData({
+      businessName: '',
+      leadSource: 'Website',
+      estimatedDealSize: '',
+      lastContactDate: '',
+      assignedTo: '',
+      contactPerson: '',
+      email: '',
+      phone: ''
+    })
+    setShowAddLead(false)
+  }
+
   const handleAddNote = () => {
     if (!selectedLead || !note.trim()) return
     const updatedLead: Lead = {
@@ -123,8 +184,14 @@ export default function SalesPipelinePage() {
     <DashboardLayout showSearch={false}>
       <div className="p-6 lg:p-8">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-8">
+          <div className="mb-8 flex items-center justify-between">
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Sales Pipeline</h1>
+            <button
+              onClick={() => setShowAddLead(true)}
+              className="px-4 py-2 bg-blue-600 text-white rounded"
+            >
+              Add Lead
+            </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -193,6 +260,99 @@ export default function SalesPipelinePage() {
           </div>
         </div>
       </div>
+
+      {showAddLead && (
+        <div
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+          onClick={() => setShowAddLead(false)}
+        >
+          <div
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg max-w-md w-full"
+            onClick={e => e.stopPropagation()}
+          >
+            <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+              Add Lead
+            </h2>
+            <div className="space-y-2">
+              <input
+                name="businessName"
+                value={newLeadData.businessName}
+                onChange={handleNewLeadChange}
+                placeholder="Business Name"
+                className="w-full border rounded p-2 text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+              />
+              <select
+                name="leadSource"
+                value={newLeadData.leadSource}
+                onChange={handleNewLeadChange}
+                className="w-full border rounded p-2 text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+              >
+                <option value="Website">Website</option>
+                <option value="Referral">Referral</option>
+                <option value="Cold Call">Cold Call</option>
+                <option value="Other">Other</option>
+              </select>
+              <input
+                type="number"
+                name="estimatedDealSize"
+                value={newLeadData.estimatedDealSize}
+                onChange={handleNewLeadChange}
+                placeholder="Estimated Deal Size"
+                className="w-full border rounded p-2 text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+              />
+              <input
+                type="date"
+                name="lastContactDate"
+                value={newLeadData.lastContactDate}
+                onChange={handleNewLeadChange}
+                className="w-full border rounded p-2 text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+              />
+              <input
+                name="assignedTo"
+                value={newLeadData.assignedTo}
+                onChange={handleNewLeadChange}
+                placeholder="Assigned To"
+                className="w-full border rounded p-2 text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+              />
+              <input
+                name="contactPerson"
+                value={newLeadData.contactPerson}
+                onChange={handleNewLeadChange}
+                placeholder="Contact Person"
+                className="w-full border rounded p-2 text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+              />
+              <input
+                name="email"
+                value={newLeadData.email}
+                onChange={handleNewLeadChange}
+                placeholder="Email"
+                className="w-full border rounded p-2 text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+              />
+              <input
+                name="phone"
+                value={newLeadData.phone}
+                onChange={handleNewLeadChange}
+                placeholder="Phone"
+                className="w-full border rounded p-2 text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+              />
+              <div className="flex justify-end gap-2 pt-2">
+                <button
+                  onClick={() => setShowAddLead(false)}
+                  className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded text-sm text-gray-800 dark:text-gray-200"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleCreateLead}
+                  className="px-3 py-1 bg-blue-600 text-white rounded text-sm"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {selectedLead && (
         <div
