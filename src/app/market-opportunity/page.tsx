@@ -12,6 +12,14 @@ interface DensityPoint {
   density: number;
 }
 
+interface GooglePlace {
+  id: string;
+  name: string;
+  lat: number;
+  lng: number;
+  address?: string;
+}
+
 export default function MarketOpportunityPage() {
   useEffect(() => {
     const link = document.createElement('link');
@@ -23,7 +31,8 @@ export default function MarketOpportunityPage() {
     script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
     script.async = true;
     script.onload = () => {
-      const map = L.map('client-map').setView([20, 0], 2);
+      const chennai: [number, number] = [13.0827, 80.2707];
+      const map = L.map('client-map').setView(chennai, 12);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors',
       }).addTo(map);
@@ -62,6 +71,24 @@ export default function MarketOpportunityPage() {
       };
 
       loadDensity();
+
+      const loadChennaiSalons = async () => {
+        try {
+          const res = await fetch(
+            `/api/places?lat=${chennai[0]}&lng=${chennai[1]}&radius=10000`
+          );
+          const data = (await res.json()) as { results: GooglePlace[] };
+          data.results.forEach((place) => {
+            L.marker([place.lat, place.lng])
+              .addTo(map)
+              .bindPopup(place.name);
+          });
+        } catch (error) {
+          console.error('Failed to load Chennai salons', error);
+        }
+      };
+
+      loadChennaiSalons();
     };
 
     document.body.appendChild(script);

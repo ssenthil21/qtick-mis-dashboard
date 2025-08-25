@@ -64,6 +64,18 @@ src/
 └── types/              # TypeScript type definitions
 ```
 
+## Environment Variables
+
+The Market Opportunity Mapper can display salon locations from Google
+Business data. To enable this, provide a Google Places API key:
+
+```bash
+export GOOGLE_PLACES_API_KEY="your-key"
+```
+
+The application reads this key on the server when querying the Google
+Places API via the `/api/places` endpoint.
+
 ## Development
 
 This project uses:
