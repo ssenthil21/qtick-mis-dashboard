@@ -16,6 +16,12 @@ export interface Client {
   subscriptionEndDate: string;
   features: FeatureUsage[];
   staff: StaffStat[];
+  location?: {
+    lat: number;
+    lng: number;
+    city?: string;
+    region?: string;
+  };
   notes?: string;
   contactEmail?: string;
   phoneNumber?: string;
@@ -94,7 +100,12 @@ export interface KpiMetric {
 // Activity feed types
 export interface Activity {
   id: string;
-  type: 'client_signup' | 'payment_received' | 'feature_used' | 'support_ticket' | 'renewal';
+  type:
+    | 'client_signup'
+    | 'payment_received'
+    | 'feature_used'
+    | 'support_ticket'
+    | 'renewal';
   message: string;
   timestamp: string;
   clientId?: string;
